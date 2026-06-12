@@ -479,14 +479,14 @@
         // ===== MONOSPACE RECEIPT =====
         let msg = "```"; // START MONOSPACE BLOCK
 
-        msg += "\n        JONA'S TRADING LLC";
-        msg += "\n         +971526580377";
-        msg += "\n     " + date + " | " + time;
-        msg += "\n=============================";
+        msg += "\nJONA'S TRADING LLC";
+        msg += "\n  +971526580377";
+        msg += "\n" + date + " | " + time;
+        msg += "\n=================";
 
-         // ===== ORDER SUMMARY =====
+         // === ORDER SUMMARY ===
         msg += "\n\nORDER SUMMARY";
-        msg += "\n-----------------------------";
+        msg += "\n----------------";
         
         // LIST OF ORDERS (QTY ONLY)
         //cart.forEach(item => {
@@ -501,18 +501,18 @@
         // TOTAL QTY
         //let totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
 
-        msg += "\n-----------------------------";
+        msg += "\n----------------";
         msg += "\nTOTAL QTY: " + totalItems;
 
-        // ===== CUSTOMER INFO =====
+        // === CUSTOMER INFO ===
         msg += "\n\nCUSTOMER INFO";
-        msg += "\n-----------------------------";
+        msg += "\n----------------";    
         msg += "\nName : " + name;
         msg += "\nPhone: " + phone;
 
-        msg += "\n=============================";
-        msg += "\n  Please confirm your order";
-        msg += "\n=============================";
+        msg += "\n=================";
+        msg += "\n Please confirm your order";
+        msg += "\n=================";
 
         msg += "```"; // END MONOSPACE BLOCK
 
