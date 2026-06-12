@@ -1,0 +1,604 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+html{
+    font-size: 10px;
+    font-family: "Roboto, sans-serif";
+}
+body{
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f3e5f5);
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 100px; /* adjust based on header height */
+    margin: 0;
+}
+.container{
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f3e5f5);
+    width: 100%;
+    padding-top: 20px;
+    position: relative;
+}
+.header{                /* HEADER - INSIDE ARE LOGO CONTAINER & LOGO ITSELF  */ 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0px;
+    height: 11vh;
+    font-family:'Poppins', sans-serif;
+    font-size: 10px;
+    padding: 2px 0;
+    z-index: 1000;
+    backdrop-filter: blur(.09px);
+    /*background: rgba(252, 68, 129, 0.85);*/
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* soft grayshadow */
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+
+    background-image: url('/Vin/Project_Perfume/image/header1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+
+/*    display: flex; */
+    align-items: center;
+    justify-content: center;
+    color: rgb(17, 1, 56);
+}
+.header.hide {          /* HEADER IS IN HIDDEN STATE */
+    transform: translateY(-100%);
+}
+.header.shrink {        /* HEADER WILL SHRINK WHEN SCROLL */
+    padding: 5px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); /* pastel shadow match */
+}
+
+.header.shrink .logo-main {  /* LOGO WILL SHRINK WHEN SCROLL */
+    width: 5rem;
+    height: 5rem;
+}
+.logo-container {       /* CONTAINER OF THE LOGO */
+    display: flex;
+    justify-content:left; /* horizontal center */
+    align-items: center; /* vertical center */
+    height: 10vh;   /* full screen height */
+    width: 100%;
+    padding: 0 20px;
+   /* background: linear-gradient( 90deg, rgba(96, 9, 146, 0.3), rgba(49, 5, 78, 0.3)); */
+}
+.logo-container .header-top{
+    color: #10031f;
+    font-family:'Poppins', sans-serif;
+    font-size: 10px;
+}
+.logo-container .header-bottom{
+    color: #10031f;
+    font-family:'Poppins', sans-serif;
+    font-size: 8px;
+}
+/*
+            .logo-main{             /* THE LOGO ITSELF 
+                width:100px;
+                height: 5rem;
+                max-width: 100px;
+                object-fit: cover;
+                border: 1px solid #fce4ec;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+                transition: all 0.4s ease;
+            }
+            */
+.card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 2rem;         
+    padding: 2rem;
+    justify-content: center;  /* ⭐ KEY FIX */
+    justify-items: center;
+    align-content: start;
+    background: transparent;
+}                           /* ----- Explanation of card-wrapper ------ */
+                            /*
+                            auto-fit → auto adjusts number of columns
+                            minmax(28rem, 1fr) →
+                            minimum card width = 28rem
+                            expands to fill space 
+                            */
+.card {
+    width: 100%;
+    max-width: 30rem;
+    margin: auto;           /* ⭐ ensures internal centering */
+    background: #fce4ec;
+    border-radius: 20px;
+    overflow: hidden;   /* keeps edges clea */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+.card:hover{
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(231, 106, 253, 0.25);
+}
+.background-card{
+    width: 100%;
+    height: 17rem;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    transition: transform 0.0s ease-in-out;
+}
+.card:hover .logo-card{
+    transform: scale(1.05);
+}
+.counter { margin-top: 10px; display: none; font-size: 12px;} /* To hide the counter */
+.logo-card{
+    width: 10rem;
+    height: 10rem;
+    max-width: 80%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -6rem;
+    border: .5px solid #ac2626;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.productname{
+    font-size: 2.4rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+.about{
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    text-align: justify;
+    padding: 1rem;
+    color: #555;
+}
+.h_line{
+    border: none;
+    height: 1px;
+    width: 60%;
+    margin: 15px auto;
+    background: linear-gradient(to right, #e70b58, #f03838);
+    border-radius: 10px;
+    }
+.add-btn{
+    margin-top: 10px;  
+    margin-bottom: 10px;
+    padding: 12px 25px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    transition: all 0.3s ease;
+}
+.add-btn:hover{
+    transform: translateY(-2px) scale(1);
+    box-shadow: 0 20px 40px rgba(94, 6, 33, 0.25);
+}
+/* ----------------------------------------------- */
+/* ---- Badges (Best Seller & Discount Badges ---- */
+.badge {
+    position:absolute;               /* use the relative; 👉 This allows the badge to stick inside the card */
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    color: #fff;
+    z-index: 10;
+    letter-spacing: 0.5px;
+}
+
+/* Bestseller Style */
+.badge.bestseller {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+}
+
+/* Discount Style */
+.badge.discount {
+    background: linear-gradient(45deg, #e91e63, #ff4081);
+}
+/* ----------------------------- */
+/* ---- Star Ratings ---- */
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.rating i {
+    color: #ffc107; /* gold stars */
+    font-size: 1.4rem;
+}
+
+.rating-text {
+    font-size: 1.2rem;
+    color: #777;
+}
+
+/* ---- Limited Stocks -----*/
+.stock.limited{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e53935;
+    margin-top: 5px;
+    animation: pulse 1.5s infinite;
+}
+
+/* ---- Stocks In -----*/
+.stock.in {
+    font-size: 1.2rem;
+    color: #28a745;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* -- Animation Stck in -- */
+.stock.in i {
+    animation: pop 1s ease;
+}
+@keyframes pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+/* ----------------------- */
+/* -- Animation Limited Stock -- */
+.stock.limited i {
+    animation: pop 1s ease;
+}
+@keyframes pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* ------- FOOTER -------- */
+.footer {
+    background: linear-gradient(135deg, #f8bbd0, #f3e5f5);
+    color: #333;
+    text-align: center;
+    padding: 15px 10px; 
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    margin-top: auto; /* ⭐ KEY LINE */
+    border-top: 1px solid rgba(0,0,0,0.2);
+
+}
+/* Highlight brand */
+.footer span {
+    color: #f4c542;
+  font-weight: 100;
+}
+.footer .Portpolio {
+  color: rgb(250, 115, 4);
+  cursor: pointer;
+  font-weight: bold;
+}
+/* subtle hover effect */
+.footer:hover {
+/*  background: linear-gradient(45deg, #2a1608, #5a2d0c); */
+    transition: 0.3s ease;
+}
+
+/* -- FLOATING WHATSAPP --- */
+.whatsapp-container{ position: fixed; bottom: 20px; right: 20px; transition: all 0.3s ease;}
+.whatsapp-float{ height: 50px; width: 50px; background: #25D366; color: white; border-radius: 50%; font-size: 25px; 
+                display: flex; justify-content: center; align-items: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); cursor: pointer; }
+.whatsapp-float:hover{ box-shadow: 0 12px 25px rgba(0,0,0,0.35); transform: scale(1.1);}
+    /* CART BADGE @ WHATSAPP CONTAINER*/
+    .cart-badge { position: absolute; top: -5px; right: -5px; background: red; color: white; font-size: 12px;
+                    padding: 5px 8px; border-radius: 50%; }
+
+/* --- PORTFOLIO MODAL --- */
+/* MODAL */
+.modal2 {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* MODAL CONTENT */
+.modal2 .modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {transform: scale(0.8); opacity:0;}
+    to {transform: scale(1); opacity:1;}
+}
+
+.modal2  .modal-content img {
+    width: 120px;
+    height: 115px;
+    border-radius: 50%;
+    border: 1px solid #2a5298;
+    margin-bottom: 10px;
+}
+
+.modal2 .modal-content .close {
+    float: right;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* QUOTATION MARK */
+.modal2 .modal-content .fas{
+    font-size: 18px;
+}
+
+/* DESCRIPTION */
+.modal2 .modal-content .description_vision {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+/* CONTACT */
+.modal2 .contact_2 .phone_2{
+    margin-top: 25px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+.modal2 .modal-content .contact_2 .email_2{
+    margin: 0px 0px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+/* ---------------------------------- */
+
+/* ORDER MODAL ------- */
+    .modal { display: none; /* ✅ FIXED */  position: fixed;  z-index: 1000; left: 0; top: 0;  width: 100%;
+            height: 100%; background: rgba(0,0,0,0.5); }
+    .modal-content { background: white; margin: 10% auto; padding: 20px; 
+            width: 300px; border-radius: 10px; text-align: center; }
+   /* TOTAL ITEMS  */
+    .modal-content .totItems { position: relative; text-align: left; font-size: 13px; margin-top: 15px;}
+
+    .close { float: right; font-size: 25px; cursor: pointer; }
+    .modal-btn {background: #a22ef0; color: white;padding: 10px; border: none; border-radius: 20px; cursor: pointer; } /* FOR NOTICE MODAL */
+    .whatsapp-btn { background: #25D366; color: white; padding: 10px; border: none; border-radius: 8px; margin-top: 10px; cursor: pointer; }
+
+/* FORM GROUP *********/
+    .form-group { position: relative; margin: 15px 0; }
+   
+    /* CUSTOMER INFO */
+    .customerinfo { position: relative; text-align: left; justify-content: left; font-size: 13px; margin-top: 5px;}
+
+    /* INPUT FIELD */
+    .form-group input {
+        width: 80%;  padding: 12px 10px;  height: 10px; /* 🔥 FIX */ border: 2px solid #ddd;
+        border-radius: 8px;  outline: none;  font-size: 14px; background: transparent; transition: 0.3s; }
+
+    /* LABEL */
+    .form-group label {
+        position: absolute; top: 50%; left: 30px; color: #999;
+        font-size: 12px; transform: translateY(-50%); pointer-events: none;
+        transition: 0.3s; background: white; padding: 0 5px; }
+
+    /* FOCUS EFFECT */
+    .form-group input:focus { border-color: #a22ef0; }
+
+    /* FLOAT LABEL WHEN TYPING */
+    .form-group input:focus + label,
+    .form-group input:valid + label { top: -8px; font-size: 12px; color: #a22ef0; }
+
+    /* OPTIONAL: INPUT HOVER */
+    .form-group input:hover { border-color: #600992; }
+    .input-icon {
+        position: absolute; left: 10px; top: 50%;
+        transform: translateY(-50%); color: #722fee;
+        font-size: 16px; line-height: 1; pointer-events: none;
+    }
+
+    .form-group input { padding-left: 35px; }
+
+    
+/* EMPTY CART MODAL DESIGN ===== */
+    .empty-modal { text-align: center; padding: 25px 20px; border-radius: 15px; animation: fadeIn 0.3s ease; }
+
+    /* TITLE */
+    .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 10px; color: #333; }
+
+    /* TEXT */
+    .modal-text { font-size: 14px; color: #555; margin-bottom: 20px; line-height: 1.5; }
+
+    /* BUTTON */
+    .modal-btn {
+        background: linear-gradient(90deg, #a22ef0, #600992); color: white; border: none;
+        padding: 10px 18px; border-radius: 25px; cursor: pointer; font-size: 14px; transition: 0.3s; }
+
+    .modal-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+    /* CLOSE BUTTON */
+    .close { float: right; font-size: 20px; cursor: pointer; color: #999; }
+    .close:hover { color: #000; }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); } }
+
+/* ------------------------------------------/
+
+/* CSS FOR LOAD MODAL SUMMARY *****/
+    
+    /* REMOVE DEFAULT BULLET */
+    #modalSummary { list-style: none; padding: 0; margin: 0; }
+
+    /* HEADER STYLE */
+    .summary-header {
+            display: flex; justify-content: space-between;
+            font-weight: bold; padding: 6px 0;
+            border-bottom: 2px solid #600992; color: #600992; }
+
+    /* EACH ROW or ITEM ROW */
+    #modalSummary li {
+            display: flex; justify-content: space-between; /* 🔥 KEY */
+            align-items: center; padding: 6px 0;
+            border-bottom: 1px dashed #ddd; font-size: 14px; }
+
+    /* LEFT TEXT */
+    #modalSummary li span:first-child { color: #333; }
+    
+    /* RIGHT QTY */
+    #modalSummary li span:last-child { font-weight: bold; color: #600992; }
+/*----------------------------------/
+
+
+/* QUANTITY CONTAINER FOR  + & - ****/
+
+    /* QTY CONTAINER */
+    .qty-container { display: flex; align-items: center; gap: 8px; }
+
+    /* BUTTON STYLE */
+    .qty-btn { width: 25px; height: 25px; border: none; border-radius: 50%;
+            cursor: pointer; font-weight: bold; font-size: 16px; display: flex;
+            align-items: center; justify-content: center; }
+
+    /* MINUS BUTTON */
+    .qty-btn.minus { background: #ddd; color: #333; }
+
+    /* PLUS BUTTON */
+    .qty-btn.plus { background: #a22ef0; color: white; }
+
+    /* HOVER EFFECT */
+    .qty-btn:hover { transform: scale(1.1); }
+
+    /* QTY NUMBER */
+    .qty-value { min-width: 20px; text-align: center; font-weight: bold; }
+/*-----------------------------------------*/
+
+    /* ----- MEDIA QUERIES ----- */
+/* ----- FOR DESKTOP (1024px-1399px) ----- */
+    @media (max-width: 1399px) {
+        .logo-container {
+            display: flex;
+            flex-direction: column; /* 🔥 FIX */
+            
+            justify-content: center;     /* vertical (optional) */
+            align-items: flex-start;     /* 🔥 LEFT ALIGN */    
+            
+            text-align: left; /* optional for text */
+           /* background-color: rgba(252, 249, 253, 0.3);*/
+            border-radius: 5%;
+            width: auto;
+        }
+        .logo-container .header-top {
+            font-size: 10px;
+            color: black;
+        }
+        .logo-container .header-bottom{
+            font-size: 7px;
+            color: black;            
+        }
+        .card-wrapper {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+/* ----- FOR TABLET LANDSCAPE (768px-1023px) ----- */
+    @media (max-width: 1023px) {
+        .card-wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+/* ----- FOR TABLET / LARGE MOBILE 576px-767PX) ----- */
+    @media (max-width: 767px) {
+        .header {
+            padding: 5px 0;          
+        }
+
+        .header.shrink .logo-main {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+
+        .card-wrapper {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .logo-main {
+            width: 6rem;
+            height: 6rem;
+        }
+
+        .productname {
+            font-size: 2rem;
+        }
+    }
+/* ----- FOR MOBILE up to 575px----- */
+    @media (max-width: 575px) {
+        .logo-container {
+            display: flex;
+            flex-direction: column; /* 🔥 FIX */
+            justify-content: center;
+            align-items: center;
+            text-align: center; /* optional for text */
+            background-color: rgba(252, 249, 253, 0.3);
+            border-radius: 5%;
+            width: auto;
+        }
+        .logo-container .header-top {
+            font-size: 10px;
+            color: black;
+        }
+        .logo-container .header-bottom{
+            font-size: 7px;
+            color: black;            
+        }
+        .card-wrapper {
+            grid-template-columns: 1fr;
+            padding: 1rem;
+        }
+
+        .card {
+            max-width: 80%;
+        }
+
+        .logo-main {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        .productname {
+            font-size: 1.8rem;
+        }
+
+        .about {
+            font-size: 1.3rem;
+        }
+
+        .btn_card {
+            width: 40%;
+            font-size: 1.3rem;
+        }
+        /* --- WhatsApp - Mobile Optimization --- */
+           .whatsapp-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+        }
+    }
+/* ------------------------- */
