@@ -494,7 +494,7 @@
         //});
 
         cart.forEach(item => {
-        let line = item.name.padEnd(20, " ") + "-  " + item.qty;
+        let line = item.name.padEnd(20, " ") + "-" + item.qty;
         msg += "\n" + line;
         });
 
@@ -511,7 +511,7 @@
         msg += "\nPhone: " + phone;
 
         msg += "\n=================";
-        msg += "\n Please confirm your order";
+        msg += "\nPlease confirm your order";
         msg += "\n=================";
 
         msg += "```"; // END MONOSPACE BLOCK
