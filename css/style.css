@@ -601,8 +601,10 @@ body{
             font-size: 15px;
         }
         /* --- Order Notice --- */
-        .ordernotice {margin-top: 15px;}
+        .ordernotice {margin-top: 25px;}
         /* --- Input Notice --- */
-        .inputnotice {margin-top: 15px;}
+        .inputnotice {margin-top: 25px;}
+        /* --- Order & Input Notice Button --- */
+        .modal-btn {margin-top: 15px;}
     }
 /* ------------------------- */
