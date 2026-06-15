@@ -426,7 +426,7 @@ body{
 
     /* BUTTON */
     .modal-btn {
-        background: linear-gradient(90deg, #a22ef0, #600992); color: white; border: none;
+        background: linear-gradient(90deg, #a22ef0, #600992); color: white; border: none; margin-top: 15px;
         padding: 10px 18px; border-radius: 25px; cursor: pointer; font-size: 14px; transition: 0.3s; }
 
     .modal-btn:hover { transform: scale(1.05); opacity: 0.9; }
