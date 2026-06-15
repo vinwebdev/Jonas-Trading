@@ -381,9 +381,9 @@ body{
     .whatsapp-btn { background: #25D366; color: white; padding: 4px; border: none; border-radius: 30px; margin-top: 10px; cursor: pointer; }
  
     /* --- Order Notice --- */
-        .ordernotice {margin-top: 25px;}
+        .ordernotice {margin-top: 25px; font-size:16px;}
     /* --- Input Notice --- */
-        .inputnotice {margin-top: 25px;}
+        .inputnotice {margin-top: 25px; font-size:16px;}
     /* --- Order & Input Notice Button --- */
         .modal-btn {margin-top: 15px;}
 
@@ -608,9 +608,9 @@ body{
             font-size: 15px;
         }
         /* --- Order Notice --- */
-        .ordernotice {margin-top: 25px;}
+        .ordernotice {margin-top: 25px; font-size:16px;}
         /* --- Input Notice --- */
-        .inputnotice {margin-top: 25px;}
+        .inputnotice {margin-top: 25px; font-size:16px;}
         /* --- Order & Input Notice Button --- */
         .modal-btn {margin-top: 15px;}
     }
