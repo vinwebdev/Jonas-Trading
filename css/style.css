@@ -377,7 +377,7 @@ body{
         .modal-content .totItems { position: relative; text-align: left; font-size: 13px; margin-top: 15px;}
 
     .close { float: right; font-size: 25px; cursor: pointer; }
-    .modal-btn {background: #a22ef0; color: white; padding-top: 10px; padding-bottom: 10px; padding-right:18px; padding-left:18px; margin-top: 15px; border: none; border-radius: 20px; cursor: pointer; } /* FOR NOTICE MODAL */
+ /*   .modal-btn {background: #a22ef0; color: white; padding-top: 10px; padding-bottom: 10px; padding-right:18px; padding-left:18px; margin-top: 15px; border: none; border-radius: 20px; cursor: pointer; }  FOR NOTICE MODAL */ 
     .whatsapp-btn { background: #25D366; color: white; padding-top: 10px; padding-bottom: 10px; padding-left:20px; padding-right:20px; border: none; border-radius: 30px; margin-top: 10px; cursor: pointer; }
  
     /* --- Order Notice --- */
@@ -435,6 +435,9 @@ body{
     .modal-btn {
         background: linear-gradient(90deg, #a22ef0, #600992); color: white; border: none; margin-top: 15px;
         padding: 10px 18px; border-radius: 25px; cursor: pointer; font-size: 14px; transition: 0.3s; }
+
+/*   .modal-btn {background: #a22ef0; color: white; padding-top: 10px; padding-bottom: 10px; padding-right:18px; 
+               padding-left:18px; margin-top: 15px; border: none; border-radius: 20px; cursor: pointer; }  FOR NOTICE MODAL */
 
     .modal-btn:hover { transform: scale(1.05); opacity: 0.9; }
 
